@@ -61,7 +61,7 @@ void loop() {
   }
 
   //codificacion de datos
-  byte datos [1]; 
+  byte datos [1]; //Hay que calcular a mano cual va a ser el tamaño dependiendo de los datos a mandar
   LoraEncoder encoder(datos);
   //el dato sera un int de 8 bytes (rango 0-255)
   encoder.writeUint8(humedadPorcentaje);
