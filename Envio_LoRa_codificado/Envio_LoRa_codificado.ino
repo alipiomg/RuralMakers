@@ -11,6 +11,9 @@ int pinSensor = 6;          //pin al que esta conectado el sensor
 LoRaModem modem;
 String appEui;
 String appKey;
+const int TAMANO = 1; //Tamaño de los datos a mandar
+const int PUERTO = 3; 
+//El puerto es un numero para ordenar en TTN los datos, no un puerto de conexion
 
 void setup() {
   // put your setup code here, to run once:
@@ -62,11 +65,11 @@ void loop() {
   }
 
   //codificacion de datos
-  byte datos [1]; //Hay que calcular a mano cual va a ser el tamaño dependiendo de los datos a mandar
+  byte datos [TAMANO]; //Hay que calcular a mano cual va a ser el tamaño dependiendo de los datos a mandar
   LoraEncoder encoder(datos);
   //el dato sera un int de 8 bytes (rango 0-255)
   encoder.writeUint8(humedadPorcentaje);
-  enviarDatos(datos,1,3);//envio de datos en una nueva funcion
+  enviarDatos(datos,TAMANO,PUERTO);//envio de datos en una nueva funcion
   delay(5000);
 }
 
