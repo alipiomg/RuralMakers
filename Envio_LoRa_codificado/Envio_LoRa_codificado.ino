@@ -1,4 +1,5 @@
 #include <MKRWAN.h>
+#include <LoraEncoder.h>
 
 //variables para leer humedad
 const int aire = 720;       //valor en vacio
