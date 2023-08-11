@@ -64,8 +64,8 @@ void loop() {
     humedadPorcentaje = 0; //sustituimos el valor si se pasa del rango
   }
 
-  //codificacion de datos
-  byte datos [TAMANO]; //Hay que calcular a mano cual va a ser el tamaño dependiendo de los datos a mandar
+  //codificacion de datos  se tendría que cambiar tb en Console ttn / payload formatter  cambiando el formatter code
+  byte datos [TAMANO]; //Hay que calcular a mano cual va a ser el tamaño dependiendo de los datos a mandar  en este caso 1 porque 1Uint8 es 1 si fueran 2 sensores podríamos 2
   LoraEncoder encoder(datos);
   //el dato sera un int de 8 bytes (rango 0-255)
   encoder.writeUint8(humedadPorcentaje);
